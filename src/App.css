@@ -1,0 +1,364 @@
+:root{
+  --bg1:#0b0010;
+  --bg2:#1a0026;
+  --border:#ffffff1f;
+  --text:#fff;
+}
+
+*{ box-sizing:border-box; }
+
+html,body,#root{
+  height:100%;
+  margin:0;
+}
+
+body{
+  font-family: system-ui, Arial, sans-serif;
+  background: radial-gradient(1200px 600px at 50% 30%, #3a004d 0%, var(--bg1) 55%, #000 100%);
+  color: var(--text);
+  overflow: hidden; /* ✅ no scroll anywhere */
+}
+
+/* --- Page + "phone screen" wrapper --- */
+.page{
+  height:100%;
+  display:grid;
+  place-items:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.phone{
+  width: min(420px, 100vw);
+  height: 100dvh;
+  max-height: 900px;
+  margin: 0 auto;
+
+  display: flex;                 /* ✅ center children */
+  align-items: center;           /* vertical center */
+  justify-content: center;       /* horizontal center */
+
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* --- Background hearts --- */
+.bg-hearts{
+  position:absolute;
+  inset:-20%;
+  background-image:
+    radial-gradient(circle at 20% 20%, #ff4d9d33 0 12px, transparent 13px),
+    radial-gradient(circle at 70% 30%, #ff3b7a22 0 10px, transparent 11px),
+    radial-gradient(circle at 40% 70%, #ff6bb033 0 14px, transparent 15px);
+  filter: blur(2px);
+  animation: floaty 10s ease-in-out infinite;
+  pointer-events:none;
+  opacity:.9;
+  z-index: 0;
+}
+
+@keyframes floaty{
+  0%,100%{ transform: translate3d(0,0,0) rotate(0deg); }
+  50%{ transform: translate3d(2%, -2%, 0) rotate(3deg); }
+}
+
+/* --- Card --- */
+.card{
+  width: min(520px, 92vw);
+  background: linear-gradient(180deg, #ffffff14, #ffffff0a);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 22px 18px 18px;
+  box-shadow: 0 30px 90px #00000066;
+  text-align:center;
+  position: relative;
+  z-index: 2;
+}
+
+.gif{
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid #ffffff22;
+  box-shadow: 0 10px 35px #00000055;
+  margin: 8px auto 14px;
+  display:block;
+}
+
+.title{
+  margin: 6px 0 6px;
+  font-size: clamp(22px, 4.4vw, 28px);
+  letter-spacing: .2px;
+}
+
+.subtitle{
+  margin: 0 0 14px;
+  opacity: .85;
+  font-size: clamp(13px, 3.2vw, 15px);
+}
+
+.buttons{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap: 12px;
+  min-height: 84px;
+  margin-top: 8px;
+  position:relative;
+}
+
+.btn{
+  border:none;
+  padding: 12px 18px;
+  border-radius: 14px;
+  font-weight: 800;
+  cursor:pointer;
+  transition: transform .18s ease, opacity .18s ease, filter .18s ease;
+  user-select:none;
+  box-shadow: 0 12px 30px #00000055;
+  will-change: transform;
+}
+
+.btn:active{ transform: scale(0.98); }
+
+.yes{
+  background: linear-gradient(180deg, #ff5cab, #ff2f7b);
+  color:white;
+}
+
+.no{
+  background: linear-gradient(180deg, #ffffff22, #ffffff10);
+  color:white;
+  border: 1px solid #ffffff22;
+}
+
+.reset{
+  margin-top: 14px;
+  background: linear-gradient(180deg, #ffffff22, #ffffff10);
+  color:white;
+  border: 1px solid #ffffff22;
+}
+
+.hint{
+  margin-top: 10px;
+  font-size: 13px;
+  opacity: .75;
+}
+
+.bigLove{
+  font-size: 56px;
+  margin-top: 10px;
+  animation: pop 1s ease-in-out infinite;
+}
+
+@keyframes pop{
+  0%,100%{ transform: scale(1); }
+  50%{ transform: scale(1.08); }
+}
+
+/* --- Cats (inside phone only) --- */
+.cat-layer{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1; /* behind card, above bg */
+  overflow: hidden;
+}
+
+.sad-cat{
+  position:absolute;
+  opacity: 1;
+  will-change: transform;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,.55));
+  animation: floatyCat 4s ease-in-out infinite (var(--delay, 0s));
+}
+
+@keyframes floatyCat{
+  0%,100% { transform: translate(-50%, -50%) rotate(var(--r, 0deg)); }
+  50% { transform: translate(-50%, calc(-50% - 10px)) rotate(var(--r, 0deg)); }
+}
+
+.drift-1{ animation-duration: 3.2s; }
+.drift-2{ animation-duration: 4.0s; }
+.drift-3{ animation-duration: 4.8s; }
+.drift-4{ animation-duration: 5.6s; }
+
+/* --- YES page --- */
+.yes-card{ padding: 22px 18px 18px; }
+
+.bouquet-btn,
+.mail-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap: 10px;
+  width: min(320px, 86vw);
+  margin: 10px auto 14px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  border: 1px solid #ffffff22;
+  cursor:pointer;
+  box-shadow: 0 18px 45px rgba(0,0,0,.45);
+  color: white;
+  font-weight: 900;
+}
+
+.bouquet-btn{
+  background: linear-gradient(180deg, #ffffff18, #ffffff10);
+}
+
+.mail-btn{
+  margin-top: 6px;
+  background: linear-gradient(180deg, #ff5cab, #ff2f7b);
+}
+
+.bouquet-btn img{ width: 44px; height: 44px; }
+.mail-btn img{ width: 40px; height: 40px; }
+.mail-btn span{ letter-spacing: .5px; }
+
+/* --- Petals (inside phone only) --- */
+.petal-layer{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index: 3;
+  overflow:hidden;
+}
+
+.petal{
+  position:absolute;
+  top: -10vh;
+  opacity: .95;
+  animation-name: petalFall;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  will-change: transform;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,.35));
+}
+
+@keyframes petalFall{
+  0%{
+    transform: translate3d(0,0,0) rotate(var(--rot));
+    opacity: 0;
+  }
+  8%{ opacity: 1; }
+  100%{
+    transform: translate3d(var(--drift), 120vh, 0) rotate(calc(var(--rot) + 260deg));
+    opacity: 1;
+  }
+}
+
+/* --- Notebook modal (ONLY SCROLLABLE AREA) --- */
+.note-backdrop{
+  position: fixed;
+  inset: 0;
+  display:grid;
+  place-items:center;
+  background: rgba(0,0,0,.55);
+  z-index: 10;
+  padding: 18px;
+}
+
+.note-card{
+  width: min(720px, 92vw);
+  max-height: 86vh;
+  overflow: auto;              /* ✅ only scroll here */
+  -webkit-overflow-scrolling: touch;
+  border-radius: 22px;
+  background: #fff8e8;
+  color: #2a1b1b;
+  box-shadow: 0 30px 90px rgba(0,0,0,.55);
+  border: 2px solid rgba(0,0,0,.08);
+  position: relative;
+}
+
+.note-top{
+  position: sticky;
+  top: 0;
+  background: linear-gradient(180deg, #fff8e8, #fff1d2);
+  padding: 16px 16px 10px;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+  border-top-left-radius: 22px;
+  border-top-right-radius: 22px;
+}
+
+.note-title{
+  margin: 6px 0 0;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.note-rings{
+  height: 14px;
+  border-radius: 12px;
+  background:
+    radial-gradient(circle, rgba(0,0,0,.25) 0 3px, transparent 4px) 0 0/24px 14px repeat-x;
+  opacity: .55;
+}
+
+.note-text{
+  margin: 0;
+  padding: 16px;
+  font-family: ui-rounded, system-ui, Arial, sans-serif;
+  font-size: 14.5px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255, 0, 90, 0.08) 0px,
+      rgba(255, 0, 90, 0.08) 1px,
+      transparent 1px,
+      transparent 26px
+    );
+}
+
+.note-bouquet{
+  display:flex;
+  justify-content:center;
+  padding: 4px 0 12px;
+}
+
+.note-bouquet img{
+  width: 54px;
+  height: 54px;
+}
+
+.note-close{
+  margin: 0 auto 16px;
+  display:block;
+}
+
+/* --- Hidden YouTube audio (no scroll, no UI) --- */
+.hidden-audio{
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Optional: if you still use a visible play button */
+.music-btn{
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid #ffffff22;
+  background: linear-gradient(180deg, #ffffff18, #ffffff10);
+  color: white;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 18px 45px rgba(0,0,0,.45);
+}
+/* click-burst petals should appear above card */
+.burst-layer{
+  z-index: 4;
+}
+
+/* make burst fall shorter (optional) */
+.burst-petal{
+  top: -6vh;
+}
