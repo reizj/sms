@@ -1,6 +1,6 @@
 :root{
-  --bg1:#0b0010;
-  --bg2:#1a0026;
+  --bg1:#0b0a06;          /* deep warm shadow */
+  --bg2:#1a160b;          /* soft dark brown */
   --border:#ffffff1f;
   --text:#fff;
 }
@@ -14,7 +14,12 @@ html,body,#root{
 
 body{
   font-family: system-ui, Arial, sans-serif;
-  background: radial-gradient(1200px 600px at 50% 30%, #3a004d 0%, var(--bg1) 55%, #000 100%);
+  background: radial-gradient(
+    1200px 600px at 50% 30%,
+    #4a3a10 0%,
+    var(--bg1) 55%,
+    #000 100%
+  );
   color: var(--text);
   overflow: hidden; /* ✅ no scroll anywhere */
 }
@@ -34,23 +39,22 @@ body{
   max-height: 900px;
   margin: 0 auto;
 
-  display: flex;                 /* ✅ center children */
-  align-items: center;           /* vertical center */
-  justify-content: center;       /* horizontal center */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   position: relative;
   overflow: hidden;
 }
 
-
-/* --- Background hearts --- */
+/* --- Background hearts (PASTEL YELLOW) --- */
 .bg-hearts{
   position:absolute;
   inset:-20%;
   background-image:
-    radial-gradient(circle at 20% 20%, #ff4d9d33 0 12px, transparent 13px),
-    radial-gradient(circle at 70% 30%, #ff3b7a22 0 10px, transparent 11px),
-    radial-gradient(circle at 40% 70%, #ff6bb033 0 14px, transparent 15px);
+    radial-gradient(circle at 20% 20%, #fff3b833 0 12px, transparent 13px),
+    radial-gradient(circle at 70% 30%, #ffe58f22 0 10px, transparent 11px),
+    radial-gradient(circle at 40% 70%, #fff7cf33 0 14px, transparent 15px);
   filter: blur(2px);
   animation: floaty 10s ease-in-out infinite;
   pointer-events:none;
@@ -66,8 +70,9 @@ body{
 /* --- Card --- */
 .card{
   width: min(520px, 92vw);
-  background: linear-gradient(180deg, #ffffff14, #ffffff0a);
+  background: linear-gradient(180deg, #ffffff14, #ffffff08);
   border: 1px solid var(--border);
+  color: #2a1b00;
   border-radius: 22px;
   padding: 22px 18px 18px;
   box-shadow: 0 30px 90px #00000066;
@@ -123,21 +128,24 @@ body{
 
 .btn:active{ transform: scale(0.98); }
 
+/* --- YES button (SOFT PASTEL YELLOW) --- */
 .yes{
-  background: linear-gradient(180deg, #ff5cab, #ff2f7b);
-  color:white;
+  background: linear-gradient(180deg, #fff6bf, #ffd978);
+  color:#2a1b00;
 }
 
+/* --- NO button (soft glass) --- */
 .no{
-  background: linear-gradient(180deg, #ffffff22, #ffffff10);
-  color:white;
+  background: linear-gradient(180deg, #ffffff18, #ffffff0a);
+  color:#2a1b00;
   border: 1px solid #ffffff22;
 }
 
+/* --- Reset button --- */
 .reset{
   margin-top: 14px;
-  background: linear-gradient(180deg, #ffffff22, #ffffff10);
-  color:white;
+  background: linear-gradient(180deg, #ffffff18, #ffffff0a);
+  color:#2a1b00;
   border: 1px solid #ffffff22;
 }
 
@@ -163,7 +171,7 @@ body{
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 1; /* behind card, above bg */
+  z-index: 1;
   overflow: hidden;
 }
 
@@ -201,17 +209,20 @@ body{
   border: 1px solid #ffffff22;
   cursor:pointer;
   box-shadow: 0 18px 45px rgba(0,0,0,.45);
-  color: white;
+  color: #2a1b00;
   font-weight: 900;
 }
 
+/* bouquet stays glass */
 .bouquet-btn{
-  background: linear-gradient(180deg, #ffffff18, #ffffff10);
+  background: linear-gradient(180deg, #ffffff18, #ffffff0a);
 }
 
+/* --- Mail button (PASTEL YELLOW) --- */
 .mail-btn{
   margin-top: 6px;
-  background: linear-gradient(180deg, #ff5cab, #ff2f7b);
+  background: linear-gradient(180deg, #fff6bf, #ffd978);
+  color:#2a1b00;
 }
 
 .bouquet-btn img{ width: 44px; height: 44px; }
@@ -264,11 +275,14 @@ body{
 .note-card{
   width: min(720px, 92vw);
   max-height: 86vh;
-  overflow: auto;              /* ✅ only scroll here */
+  overflow: auto;
   -webkit-overflow-scrolling: touch;
   border-radius: 22px;
-  background: #fff8e8;
-  color: #2a1b1b;
+
+  /* pastel yellow paper */
+  background: #fff8d9;
+  color: #2a1b00;
+
   box-shadow: 0 30px 90px rgba(0,0,0,.55);
   border: 2px solid rgba(0,0,0,.08);
   position: relative;
@@ -277,7 +291,7 @@ body{
 .note-top{
   position: sticky;
   top: 0;
-  background: linear-gradient(180deg, #fff8e8, #fff1d2);
+  background: linear-gradient(180deg, #fff8d9, #ffeab0);
   padding: 16px 16px 10px;
   border-bottom: 1px solid rgba(0,0,0,.08);
   border-top-left-radius: 22px;
@@ -298,14 +312,23 @@ body{
   opacity: .55;
 }
 
-.note-text {
+.note-text{
   margin: 0;
   padding: 16px;
   font-family: ui-rounded, system-ui, Arial, sans-serif;
   font-size: 14.5px;
   line-height: 1.5;
   white-space: pre-wrap;
-  background: none; /* ✅ removed the lines */
+
+  /* pastel yellow lines */
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255, 215, 120, 0.18) 0px,
+      rgba(255, 215, 120, 0.18) 1px,
+      transparent 1px,
+      transparent 26px
+    );
 }
 
 .note-bouquet{
@@ -340,12 +363,13 @@ body{
   padding: 10px 14px;
   border-radius: 14px;
   border: 1px solid #ffffff22;
-  background: linear-gradient(180deg, #ffffff18, #ffffff10);
+  background: linear-gradient(180deg, #ffffff18, #ffffff0a);
   color: white;
   font-weight: 900;
   cursor: pointer;
   box-shadow: 0 18px 45px rgba(0,0,0,.45);
 }
+
 /* click-burst petals should appear above card */
 .burst-layer{
   z-index: 4;

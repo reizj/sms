@@ -18,7 +18,7 @@ export default function YesPage() {
         "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f490.png"; // 💐
     const mailImg =
         "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f48c.png"; // 💌
-    const petalEmoji = "🌸";
+    const petalEmoji = "🌼";
 
     const message = `Who would have thought that the girl I used to tease for my friend would be the reason I’m doing this coding stuff? Thinking back on all those times I teased my friend, checked out your socials, and watched you from a distance during the PSU interview, I never imagined that one day I’d be sitting here writing this letter for you. I just want to say that I’m really grateful to have met you, and I’m truly happy to be talking to you. Always remember, I’m here for you. Study hard so that I can already edit your tarpaulin when the time comes for you to graduate and pass your board exam. And by chance, I hope I can still take you to all those places I’ve told you about. I still want to bake cakes and cupcakes with you, go hiking, visit Cozy Cove, and watch live bands together. Happy Valentines, my special friend!  i like you sobra sobra as a friend?!`;
 
@@ -197,7 +197,7 @@ export default function YesPage() {
                         <div className="note-card" onClick={(e) => e.stopPropagation()}>
                             <div className="note-top">
                                 <div className="note-rings" aria-hidden="true" />
-                                <h2 className="note-title">💌 seamaara</h2>
+                                <h2 className="note-title">💌 Notebook Note</h2>
                             </div>
 
                             <pre className="note-text">{message}</pre>
