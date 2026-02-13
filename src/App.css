@@ -194,23 +194,34 @@ body{
 .drift-4{ animation-duration: 5.6s; }
 
 /* --- YES page --- */
-.yes-card{ padding: 22px 18px 18px; }
+.yes-card {
+  padding: 22px 18px 18px;
+  text-align: center;       /* centers text */
+  display: flex;            /* make it a flex container */
+  flex-direction: column;   /* stack children vertically */
+  align-items: center;      /* center horizontally */
+  justify-content: flex-start; /* start from top */
+  gap: 12px;                /* space between elements */
+}
 
 .bouquet-btn,
 .mail-btn{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap: 10px;
-  width: min(320px, 86vw);
-  margin: 10px auto 14px;
+  display: flex;            /* flex container for icon + text */
+  align-items: center;      /* vertical center */
+  justify-content: center;  /* horizontal center */
+  gap: 10px;                /* spacing between icon and text */
+  
+  width: 100%;              /* make full width of card */
+  max-width: 320px;         /* limit width */
+  margin: 8px auto;         /* center horizontally */
   padding: 14px 16px;
+  
   border-radius: 18px;
-  border: 1px solid #ffffff22;
-  cursor:pointer;
-  box-shadow: 0 18px 45px rgba(0,0,0,.45);
-  color: #2a1b00;
+  cursor: pointer;
   font-weight: 900;
+  line-height: 1.2;         /* fixes vertical alignment of text */
+  font-size: 1.05em;        /* optional: slightly bigger text */
+  text-align: center; 
 }
 
 /* bouquet stays glass */
