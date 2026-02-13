@@ -298,21 +298,14 @@ body{
   opacity: .55;
 }
 
-.note-text{
+.note-text {
   margin: 0;
   padding: 16px;
   font-family: ui-rounded, system-ui, Arial, sans-serif;
   font-size: 14.5px;
   line-height: 1.5;
   white-space: pre-wrap;
-  background:
-    repeating-linear-gradient(
-      to bottom,
-      rgba(255, 0, 90, 0.08) 0px,
-      rgba(255, 0, 90, 0.08) 1px,
-      transparent 1px,
-      transparent 26px
-    );
+  background: none; /* ✅ removed the lines */
 }
 
 .note-bouquet{
