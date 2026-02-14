@@ -331,15 +331,8 @@ body{
   line-height: 1.5;
   white-space: pre-wrap;
 
-  /* pastel yellow lines */
-  background:
-    repeating-linear-gradient(
-      to bottom,
-      rgba(255, 215, 120, 0.18) 0px,
-      rgba(255, 215, 120, 0.18) 1px,
-      transparent 1px,
-      transparent 26px
-    );
+  background: rgba(255,255,255,0.35);
+  border-radius: 14px;
 }
 
 .note-bouquet{
