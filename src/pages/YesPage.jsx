@@ -20,7 +20,7 @@ export default function YesPage() {
         "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f48c.png"; // 💌
     const petalEmoji = "🌼";
 
-    const message = `Who would have thought that the girl I used to tease for my friend would be the reason I’m doing this coding stuff? Thinking back on all those times I teased my friend, checked out your socials, and watched you from a distance during the PSU interview, I never imagined that one day I’d be sitting here writing this letter for you. I just want to say that I’m really grateful to have met you, and I’m truly happy to be talking to you. Always remember, I’m here for you. Study hard so that I can already edit your tarpaulin when the time comes for you to graduate and pass your board exam. And by chance, I hope I can still take you to all those places I’ve told you about. I still want to bake cakes and cupcakes with you, go hiking, visit Cozy Cove, and watch live bands together. Happy Valentines, my special friend!  i like you sobra sobra as a friend?!`;
+    const message = `Who would have thought that the girl I used to tease for my friend would be the reason I’m doing this coding stuff? I just to say na i am grateful na nakilala kita. Masaya ako kapag nakakausap kita. All those places na sinabi ko sayo na gusto kong puntahan kasama ka, totoo lahat yon. Tinatawan mo siguro ako pero seryoso ako ron, gusto ko mag-bake ng cake at cupcakes na kasama ka. Gusto ko mag-hike tapos manuod ng live bands sa cozy cove sa baguio na kasama ka. I don't know what future holds pero sana matupad lahat yan na ikaw ang kasama ko. Pero syempre para matupad yan, mag-aral muna tayo nang mabuti ngayon. I know it will never be easy, there will be a times na you feel like you're tired pero sana every time na you feel that, may you remember this letter, na there's someone believing and hping that next time she will edit is yung tarpaulin mo na kapag graduate at pumasa ka na sa board exam mo. Andito lang ako palagi. Happy valentines, my special friend! I like you sobra sobra.`;
 
     // ✅ "Full screen" petals (only shown after 5 clicks)
     const petals = useMemo(() => {
@@ -197,7 +197,7 @@ export default function YesPage() {
                         <div className="note-card" onClick={(e) => e.stopPropagation()}>
                             <div className="note-top">
                                 <div className="note-rings" aria-hidden="true" />
-                                <h2 className="note-title">💌 Notebook Note</h2>
+                                <h2 className="note-title">💌 Seamaara</h2>
                             </div>
 
                             <pre className="note-text">{message}</pre>
